@@ -1,31 +1,33 @@
-﻿string? todoInput = null;
-string[] todoArray = new string[100];
-void promptForTodoGreeting()
-{
-  Console.WriteLine("Hello, this is a Todo app, written in C#");
-  Console.Write("Enter your first Todo: ");
-  todoInput = Console.ReadLine();
-}
+﻿using System;
 
-String[] getCurrentTodos()
-{
-  return todoArray; 
-}
+string? userInput;
+int? userInputValid = -1;
 
-void printCurrentTodos()
+void PromptForTodoGreeting()
 {
-  //FIXME: This is wrong. The array is initalized with 100 null items, fix this so if the item is null
-  // it doesn't print the item out.
-  if (todoArray.Length > 0)
+  do
   {
-    foreach (string todo in todoArray)
+    Console.WriteLine("Make a selection: ");
+    Console.WriteLine("1. List Todos:");
+    Console.WriteLine("2. Remove a Todo:");
+    Console.WriteLine("3. Complete a Todo:");
+    Console.WriteLine("0. Exit Program");
+    Console.Write("Selection: ");
+    userInput = Console.ReadLine();
+    
+
+    if (userInput != null)
     {
-       Console.WriteLine($"Todo: {todo}");
+      userInputValid = int.Parse(userInput);
     }
-  }
+  } while (userInputValid != 0);
+
+  Console.WriteLine("Exiting Program...");
 }
 
-promptForTodoGreeting();
-printCurrentTodos();
+PromptForTodoGreeting();
+
+
+
 
 

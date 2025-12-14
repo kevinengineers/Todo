@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/kjwatke/projects/github/Todo/Todo.csproj": {}
+    "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj": {}
   },
   "projects": {
-    "/home/kjwatke/projects/github/Todo/Todo.csproj": {
+    "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kjwatke/projects/github/Todo/Todo.csproj",
+        "projectUniqueName": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj",
         "projectName": "Todo",
-        "projectPath": "/home/kjwatke/projects/github/Todo/Todo.csproj",
-        "packagesPath": "/home/kjwatke/.nuget/packages/",
-        "outputPath": "/home/kjwatke/projects/github/Todo/obj/",
+        "projectPath": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj",
+        "packagesPath": "/Users/kevinwatke/.nuget/packages/",
+        "outputPath": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kjwatke/.nuget/NuGet/NuGet.Config"
+          "/Users/kevinwatke/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -54,18 +54,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[10.0.0, 10.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

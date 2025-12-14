@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jnxabgBNZEw=",
+  "dgSpecHash": "XWC2+FsL0dw=",
   "success": true,
-  "projectFilePath": "/home/kjwatke/projects/github/Todo/Todo.csproj",
-  "expectedPackageFiles": [
-    "/home/kjwatke/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.0/microsoft.aspnetcore.app.ref.10.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
