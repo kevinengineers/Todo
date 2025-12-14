@@ -2,6 +2,14 @@
 
 string? userInput;
 int? userInputValid = -1;
+var todos = new Todo[100];
+var i = 0;
+
+Todo[] GetTodos()
+{
+  return todos;
+}
+
 
 void PromptForTodoGreeting()
 {
@@ -20,11 +28,32 @@ void PromptForTodoGreeting()
     {
       userInputValid = int.Parse(userInput);
     }
+    if (userInputValid == 1)
+    {
+      foreach (var todo in todos)
+      {
+        if (todo != null)
+        {
+          Console.WriteLine($"Todo: {i + 1}: {todo.GetName()}, {todo.GetDescription()}");
+          i++;
+        }
+      }
+    }
   } while (userInputValid != 0);
 
   Console.WriteLine("Exiting Program...");
 }
 
+void testData()
+{
+  for (int j = 0; j < 10; j++)
+  {
+    var todo = new Todo("Clean something", "clean something before susie gets home");
+    todos[j] = todo;
+  }
+}
+
+testData();
 PromptForTodoGreeting();
 
 
