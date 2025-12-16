@@ -6,9 +6,16 @@ int? userInputValid = -1;
 var todos = new Todo[100];
 var i = 0;
 
-Todo[] GetTodos()
+void GetTodos()
 {
-  return todos;
+  foreach (var todo in todos)
+  {
+    if (todo != null)
+    {
+      Console.WriteLine($"Todo: {i + 1}: {todo.GetName()}, {todo.GetDescription()}");
+      i++;
+    }
+  }
 }
 
 void AddTodo(Todo todo)
@@ -29,6 +36,27 @@ void AddTodo(Todo todo)
 
 }
 
+void CreateNewTodo()
+{
+  
+  Console.Write("Enter Todo name: ");
+  var todoName = Console.ReadLine();
+  
+  Console.Write("Enter description: ");
+  var todoDescription = Console.ReadLine();
+
+  if (todoName == null || todoDescription == null)
+  {
+    Console.WriteLine("Error, invalid input given for todo, please restart the program");
+    return;
+  }
+  
+  var newTodo = new Todo(todoName, todoDescription);
+  AddTodo(newTodo);
+  
+  Console.WriteLine("Added new todo");
+}
+
 
 void PromptForTodoGreeting()
 {
@@ -36,8 +64,8 @@ void PromptForTodoGreeting()
   {
     Console.WriteLine("Make a selection: ");
     Console.WriteLine("1. List Todos:");
-    Console.WriteLine("2. Remove a Todo:");
-    Console.WriteLine("3. Complete a Todo:");
+    Console.WriteLine("2: Add a Todo:");
+    Console.WriteLine("3. Delete a Todo:");
     Console.WriteLine("0. Exit Program");
     Console.Write("Selection: ");
     userInput = Console.ReadLine();
@@ -49,14 +77,12 @@ void PromptForTodoGreeting()
     }
     if (userInputValid == 1)
     {
-      foreach (var todo in todos)
-      {
-        if (todo != null)
-        {
-          Console.WriteLine($"Todo: {i + 1}: {todo.GetName()}, {todo.GetDescription()}");
-          i++;
-        }
-      }
+      GetTodos();
+    }
+
+    if (userInputValid == 2)
+    {
+      CreateNewTodo();
     }
   } while (userInputValid != 0);
 
