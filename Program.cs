@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 string? userInput;
 int? userInputValid = -1;
@@ -8,6 +9,24 @@ var i = 0;
 Todo[] GetTodos()
 {
   return todos;
+}
+
+void AddTodo(Todo todo)
+{
+  // Find first index of null items.
+  int index = 0;
+
+  for (int j = 0; j < todos.Length; j++)
+  {
+    if (todos[j] == null)
+    {
+      index = j;
+      break;
+    }
+  }
+
+  todos[index] = todo;
+
 }
 
 
@@ -44,17 +63,8 @@ void PromptForTodoGreeting()
   Console.WriteLine("Exiting Program...");
 }
 
-void testData()
-{
-  for (int j = 0; j < 10; j++)
-  {
-    var todo = new Todo("Clean something", "clean something before susie gets home");
-    todos[j] = todo;
-  }
-}
-
-testData();
 PromptForTodoGreeting();
+
 
 
 

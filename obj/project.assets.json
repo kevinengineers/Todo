@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj",
+      "projectUniqueName": "/Users/kevinwatke/Workspace/Github/Todo/Todo.csproj",
       "projectName": "Todo",
-      "projectPath": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/Todo.csproj",
+      "projectPath": "/Users/kevinwatke/Workspace/Github/Todo/Todo.csproj",
       "packagesPath": "/Users/kevinwatke/.nuget/packages/",
-      "outputPath": "/Users/kevinwatke/Workspace/github.com/kevinengineers/Todo/obj/",
+      "outputPath": "/Users/kevinwatke/Workspace/Github/Todo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kevinwatke/.nuget/NuGet/NuGet.Config"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
