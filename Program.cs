@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-
-string? userInput;
+﻿string? userInput;
 int? userInputValid = -1;
 var todos = new Todo[100];
 var i = 0;
@@ -21,9 +18,9 @@ void GetTodos()
 void AddTodo(Todo todo)
 {
   // Find first index of null items.
-  int index = 0;
+  var index = 0;
 
-  for (int j = 0; j < todos.Length; j++)
+  for (var j = 0; j < todos.Length; j++)
   {
     if (todos[j] == null)
     {
@@ -69,20 +66,26 @@ void PromptForTodoGreeting()
     Console.WriteLine("0. Exit Program");
     Console.Write("Selection: ");
     userInput = Console.ReadLine();
-    
 
-    if (userInput != null)
-    {
-      userInputValid = int.Parse(userInput);
-    }
-    if (userInputValid == 1)
-    {
-      GetTodos();
-    }
 
-    if (userInputValid == 2)
+    while (userInput == null)
     {
-      CreateNewTodo();
+      Console.Write("Invalid input, please enter a valid selection: ");
+      userInput = Console.ReadLine();
+    }
+    userInputValid = int.Parse(userInput);
+
+    switch (userInputValid)
+    {
+      case 1:
+        GetTodos();
+        break;
+      case 2:
+        CreateNewTodo();
+        break;
+      default:
+        Console.WriteLine("Invalid input, please make a valid selection...");
+        break;
     }
   } while (userInputValid != 0);
 
