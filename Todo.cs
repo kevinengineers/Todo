@@ -1,22 +1,24 @@
+namespace TodoApp;
+
 public class Todo
 {
-    private string name;
-    private string description;
+    private string _name;
+    private string _description;
 
     public Todo(string name, string description)
     {
-        this.name = name;
-        this.description = description;
+        _name = name;
+        _description = description;
     }
 
     public string GetName()
     {
-        return this.name;
+        return _name;
     }
 
     public String GetDescription()
     {
-        return this.description;
+        return _description;
     }
 
 }
