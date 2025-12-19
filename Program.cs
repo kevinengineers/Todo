@@ -32,6 +32,9 @@ void PromptForTodoGreeting()
       case 2:
         todoStore.CreateNewTodo();
         break;
+      case 3:
+        todoStore.DeleteTodo();
+        break;
       default:
         Console.WriteLine("Invalid input, please make a valid selection...");
         break;

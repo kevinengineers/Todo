@@ -4,7 +4,8 @@ namespace TodoApp;
 
 public class TodoStore
 {
-    private Todo?[] _todos = new Todo[100];
+    private readonly Todo?[] _todos = new Todo[100];
+    private int _index = 0;
 
     public Todo?[] GetTodos()
     {
@@ -14,34 +15,37 @@ public class TodoStore
 
     public void PrintTodos()
     {
-        foreach (var todo in _todos)
+        for (var i = 0; i < _todos.Length; i++)
         {
+            var todo = _todos[i];
+            
             if (todo == null)
             {
                 continue;
             }
-
-            Console.WriteLine($"{todo.GetName()}, {todo.GetDescription()}");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine($"{i}. Name: {todo.GetName()}, Desc: {todo.GetDescription()} ");
+            Console.WriteLine("----------------------------------------");
         }
     }
     
-    public void AddTodo(Todo todo)
+    private void AddTodo(Todo todo)
     {
-        // Find first index of null items.
-        var index = 0;
-
         for (var j = 0; j < _todos.Length; j++)
         {
             if (_todos[j] == null)
             {
-                index = j;
+                _index = j;
                 break;
             }
         }
-        Console.WriteLine($"adding {todo.GetName()} at index: {index}");
-        _todos[index] = todo;
+        
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine($"adding {todo.GetName()}");
+        Console.WriteLine("----------------------------------------");
+        
+        _todos[_index] = todo;
     }
-    
     
     
     public void CreateNewTodo()
@@ -58,10 +62,33 @@ public class TodoStore
             Console.WriteLine("Error, invalid input given for todo, please restart the program");
             return;
         }
-  
         var newTodo = new Todo(todoName, todoDescription);
         AddTodo(newTodo);
   
         Console.WriteLine("Added new todo");
+    }
+
+    public void DeleteTodo()
+    {
+        Console.Write($"Enter the number of the Todo to delete: ");
+        
+        string? deleteAtIndex = Console.ReadLine();
+        
+        if (int.TryParse(deleteAtIndex, out var deleteIndex))
+        {
+            if (deleteIndex >= 0)
+            {
+                var todo = _todos[deleteIndex];
+
+                if (todo != null)
+                {
+                    
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine($"Deleting {todo.GetName()}");
+                    Console.WriteLine("----------------------------------------");
+                    _todos[deleteIndex] = null;
+                }
+            }
+        };
     }
 }

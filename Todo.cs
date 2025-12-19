@@ -1,15 +1,9 @@
 namespace TodoApp;
 
-public class Todo
+public class Todo(string name, string description)
 {
-    private string _name;
-    private string _description;
-
-    public Todo(string name, string description)
-    {
-        _name = name;
-        _description = description;
-    }
+    private readonly string _name = name;
+    private readonly string _description = description;
 
     public string GetName()
     {
